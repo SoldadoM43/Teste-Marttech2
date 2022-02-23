@@ -17,6 +17,20 @@ function validateCourse(course) {
     return Joi.validate(course, schema);
 }
 
+app.post('/api/courses', (req, res) => {
+    const { error } =   validateCourse(rec.body);
+    
+    if (error) return res.status(400).send(error.details[0].message);
+
+    const course = {
+        id: courses.length + 1,
+        name: req.body.name,
+    };
+    courses.puth(course);
+    res.send(course);
+
+});
+
 app.get('/api/courses', (req, res) => {
     res.send(courses);
 });
