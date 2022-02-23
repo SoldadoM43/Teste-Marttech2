@@ -10,6 +10,13 @@ const courses = [
     {id: 3, name: 'course3'},
 ];
 
+function validateCourse(course) {
+    const schema = {
+        name: Joi.stryng().min(2).require(),
+    }
+    return Joi.validate(course, schema);
+}
+
 app.get('/api/courses', (req, res) => {
     res.send(courses);
 });
