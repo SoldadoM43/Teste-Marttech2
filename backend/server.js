@@ -1,7 +1,9 @@
-const joy = require('joy');
+const {server} = require('./api/api');
 const express = require('express');
-const app = express();
+const path = require('path');
+const joy = require('joy');
 
+const app = express();
 app.use(express.json());
 
 const courses = [
