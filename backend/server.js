@@ -57,5 +57,15 @@ app.get('/api/courses/:id', (req, res) => {
     res.send(course);
 });
 
+app.delete('/api/courses/:id', (req, res) => {
+    const course = courses.find((c) => c.id === parseInt(req.params.id));
+    if (!course) {
+        return res.status(404).send('Não foi possível localizar o Id');
+    }
+    const index = course.indexOf(course);
+    course.splice(index, 1);
+    res.send(course);
+});
+
 const port = process.env.PORT || 3001;
 app.listen(port, () => console.log(`Servidor rodando na porta ${port}`));
