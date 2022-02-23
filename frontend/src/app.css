@@ -1,7 +1,9 @@
 body {
-    /* background-color: rgb(10, 13, 27); */
+    background-color: #0f0f16;
 }
 h1 {
+    z-index: 1;
     text-align: center;
+    position: relative;
     color: rgb(14, 18, 22);
 }

@@ -1,13 +1,14 @@
 import { Link } from "react-router-dom";
+import {HiOutlineLogout} from "react-icons/hi";
 
 import "./styles.css";
-import { Container, Header, Nav } from "./styles";
+import { Header } from "./styles";
 
 export default function Menu() {
     return (
         <Header className="header">
             <p>Logo</p>
-            <Nav>
+            <nav>
                 <ul className="menu">
                     <li>
                         <Link to="/home" className="a">
@@ -26,11 +27,11 @@ export default function Menu() {
                     </li>
                     <li>
                         <Link to="/" className="a">
-                            Sair
+                            <HiOutlineLogout />
                         </Link>
                     </li>
                 </ul>
-            </Nav>
+            </nav>
         </Header>
     );
 }
