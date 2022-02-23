@@ -1,87 +1,20 @@
-nav {
-    width: 300px;
-    height: 100%;
-    position: fixed;
-    margin-top: 20px;
-    box-sizing: initial;
-    margin-left: 30px;
-    margin-bottom: 20px;
-    background-color: rgb(5, 5, 46);
-}
-nav ul {
-    width: 100%;
-    margin-left: 0;
-    margin-top: 40px;
-    padding-left: 5px;
-    padding-top: 40px;
-}
-nav ul li {
-    width: 100%;
+body, ul, li, p {
+    margin: 0;
+    padding: 0;
     list-style: none;
-    position: relative;
+    font-size: 1.2rem;
+    font-family: Arial, Helvetica, sans-serif;
 }
-nav ul li .a {
-    width: 100%;
-    display: flex;
-    display: block;
-    color: white;
-    margin-bottom: 30px;
-    margin-left: -20px;
-    padding-top: 10px;
-    position: relative;
-    border-radius: 35px;
+.a {
     text-decoration: none;
-    border-bottom-left-radius: 0;
-    background-color: rgb(43, 137, 226);
 }
-nav ul li .a::before {
-    content: '';
-    width: 15px;
-    height: 30px;
-    margin-top: 50px;
-    z-index: 2;
-    position: absolute;
-    background-color: rgb(26, 75, 121);
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-}
-nav ul li .a::after {
-    content: '';
-    width: 15px;
-    height: 15px;
-    position: absolute;
-    background-color: rgb(43, 137, 226);
-}
-nav ul li .a .profile-details {
-    width: 100%;
+.menu {
     display: flex;
+}
+.menu li {
+    margin-left: 20px;
+}
+.menu li a {
     display: block;
-    color: white;
-    margin-top: 400px;
-    margin-bottom: 30px;
-    margin-left: -20px;
-    padding-top: 10px;
-    position: relative;
-    border-radius: 35px;
-    text-decoration: none;
-    border-bottom-left-radius: 0;
-    background-color: rgb(43, 137, 226);
-}
-nav ul li .a .profile-details::before {
-    content: '';
-    width: 15px;
-    height: 30px;
-    margin-top: 63px;
-    z-index: 2;
-    position: absolute;
-    background-color: rgb(26, 75, 121);
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-}
-nav ul li .a .profile-details::after {
-    content: '';
-    width: 15px;
-    height: 15px;
-    position: absolute;
-    background-color: rgb(43, 137, 226);
+    padding: 10px;
 }

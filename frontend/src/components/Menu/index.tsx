@@ -1,27 +1,36 @@
 import { Link } from "react-router-dom";
 
 import "./styles.css";
+import { Container, Header, Nav } from "./styles";
 
 export default function Menu() {
     return (
-        <>
-            <nav>
-                <ul>
+        <Header className="header">
+            <p>Logo</p>
+            <Nav>
+                <ul className="menu">
                     <li>
-                        <Link to="/home" className="a">Home</Link>
+                        <Link to="/home" className="a">
+                            Home
+                        </Link>
                     </li>
                     <li>
-                        <Link to="tarefas" className="a">Tarefas</Link>
+                        <Link to="/tarefas" className="a">
+                            Tarefas
+                        </Link>
                     </li>
                     <li>
                         <Link to="/perfil" className="a">
-                            <div className="profile_details">
-                                <p >Perfil</p>
-                            </div>
+                            Perfil
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to="/" className="a">
+                            Sair
                         </Link>
                     </li>
                 </ul>
-            </nav>
-        </>
+            </Nav>
+        </Header>
     );
 }
