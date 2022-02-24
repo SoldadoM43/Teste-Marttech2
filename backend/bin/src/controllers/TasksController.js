@@ -1,32 +1,40 @@
-const mongoose = require('mongoose');
-const Tasks = mongoose.model('Tasks');
+const { validationResult } = require('express-validator');
+const repository = require('../repositories/tasksRepository');
 
-// list
 exports.listTasks = async (req, res) => {
   try {
-    const data = await Tasks.find({});
+    const data = await repository.listTasks();
     res.status(200).send(data);
   } catch (e) {
-    res.status(500).send({message: 'Falha ao carregar as tarefas.'});
+    res.status(500).send({message: 'Falha ao carregar as Tarefas'});
   }
 };
 
-// create
-exports.listMentions = async (req, res) => {
-    try {
-      const data = await Tasks.find({}, 'author tasks description -_id');
-      res.status(200).send(data);
-    } catch (e) {
-      res.status(500).send({message: 'Falha ao carregar as tarefas'});
-    }
-  };
+exports.createTask = async (req, res) => {
+  const {errors} = validationResult(req);
 
-console.log(newtask)
+  if(errors.length > 0) {
+    return res.status(400).send({message: errors})
+  }
+  try {
+    await repository.createTask({
+      author: req.body.author,
+      task: req.body.task,
+      description: req.body.description
+    });
 
-await newtask.save();
+    return res.status(201).send({message: 'Tarefa adicionada com sucesso!'});
 
-try {
-    res.status(201).send({message: 'Tarefa cadastrada com sucesso'});
   } catch (e) {
-    res.status(500).send({message: 'Falha ao cadastrar a Tarefa'});
-}
+    
+    return res.status(500).send({message: 'Falha ao adicionar a tarefa.'});
+
+  }
+};
+
+exports.deleteTask = async (req, res) => {
+};
+
+exports.putTask = async (req, res) => {
+
+};
