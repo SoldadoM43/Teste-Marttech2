@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { FaTasks } from "react-icons/fa";
 import { FaUserAlt } from "react-icons/fa";
 import { RiLockPasswordFill } from "react-icons/ri";
 
@@ -18,6 +19,7 @@ export default function Login() {
                     <p className="title">Login</p>
                     <p className="subtitle">Bem-Vindo(a) ao TSS</p>
                 </header>
+                <FaTasks className="icon"/>
                 <div className="inputs">
                     <table>
                         <tr>
