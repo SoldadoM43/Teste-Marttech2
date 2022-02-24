@@ -7,7 +7,7 @@ import { Header } from "./styles";
 export default function Menu() {
     return (
         <Header className="header">
-            <p>Logo</p>
+            <p className="name">TSS - Task System Storage</p>
             <nav>
                 <ul className="menu">
                     <li>

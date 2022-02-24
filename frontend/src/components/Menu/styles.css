@@ -16,6 +16,10 @@ body, ul, li, p {
     border: solid 1px #353553;
     color: rgb(224, 233, 241);
 }
+.name {
+    font-size: 25px;
+    color: rgb(199, 214, 228);
+}
 .menu {
     display: flex;
 }
