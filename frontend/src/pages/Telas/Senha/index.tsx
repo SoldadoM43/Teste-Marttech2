@@ -1,10 +1,10 @@
 import "./styles.css";
 import {} from "./styles";
 
-export default function Cadastro() {
+export default function Senha() {
     return (
         <>
-            <h1>Cadastro</h1>
+            <h1>Senha</h1>
         </>
     );
 }
