@@ -10,6 +10,10 @@ const schema = new Schema({
   task: {
     type: String,
     required: true
+  },
+  descrition: {
+      type: String,
+      required: true,
   }
 });
 

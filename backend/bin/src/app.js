@@ -9,8 +9,7 @@ mongoose.connect(process.env.DATABASE_CONNECTION_STRING, {
 });
 
 const db = mongoose.connection;
-const Tasks = require('./models/tasks');
-  
+
 db.on('connected', () => {
     console.log('Mongoose default connection is open');
 });
@@ -26,13 +25,18 @@ db.on('disconnected', () => {
 process.on('SIGINT', () => {
     db.close(() => {
         console.log(
-        'Mongoose default connection is disconnected due to application termination'
+            'Mongoose default connection is disconnected due to application termination'
         );
         process.exit(0);
     });
 });
+    
+const Tasks = require('./models/tasks');
 
 const indexRoutes = require('./routes/index');
 app.use('/', indexRoutes);
+
+const tasksRoutes = require('./routes/tasksRoutes');
+app.use('/tasks', tasksRoutes);
 
 module.exports = app;
