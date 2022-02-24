@@ -7,14 +7,11 @@ import { Header } from "./styles";
 export default function Menu() {
     return (
         <Header className="header">
-            <p className="name">TSS - Task System Storage</p>
+            <Link to="/home" className="a_nome">
+                <p className="name">TSS - Task System Storage</p>
+            </Link>
             <nav>
                 <ul className="menu">
-                    <li>
-                        <Link to="/home" className="a">
-                            Home
-                        </Link>
-                    </li>
                     <li>
                         <Link to="/tarefas" className="a">
                             Tarefas

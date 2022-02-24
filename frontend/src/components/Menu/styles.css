@@ -5,6 +5,10 @@ body, ul, li, p {
     font-size: 1.2rem;
     font-family: Arial, Helvetica, sans-serif;
 }
+.a_nome {
+    text-decoration: none;
+    color: rgb(199, 214, 228);
+}
 .a {
     text-decoration: none;
     color: rgb(199, 214, 228);
