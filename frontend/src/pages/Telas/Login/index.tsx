@@ -1,26 +1,38 @@
 import { Link } from "react-router-dom";
 
 import "./styles.css";
-import {} from "./styles";
+import {Container} from "./styles";
 
 export default function Login() {
     return (
-        <>
-            <h1>Login</h1>
-            <button>
-                <Link to="/home">
-                    Acessar
+        <Container>
+            <header>
+                <h1>Login</h1>
+            </header>
+            <main className="inputs">
+                <input type="email" placeholder="E-mail"/> <br />
+                <input type="password" placeholder="Senha"/>
+            </main>
+            <div className="botao">
+                <Link to="/home" className="link">
+                    <button className="btn">
+                        Acessar
+                    </button>
                 </Link>
-            </button>
-            <Link to="/senha">
-                Esqueci minha Senha
-            </Link>
-            <p>
-                Ainda não tem uma conta? 
-                <Link to="/cadastro">
-                    Cadastre-se
-                </Link>
-            </p>
-        </>
+            </div>
+            <footer>
+                <p className="text">
+                    <Link to="/senha" className="link">
+                        Esqueci minha Senha
+                    </Link>
+                </p>
+                <p className="text">
+                    Ainda não tem uma conta? 
+                    <Link to="/cadastro" className="link">
+                        Cadastre-se
+                    </Link>
+                </p>
+            </footer>
+        </Container>
     );
 }
