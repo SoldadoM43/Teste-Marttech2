@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 
 import "./styles.css";
 import { Container } from './styles';
@@ -10,10 +10,16 @@ type Props = {
 }
 
 export default function List({ item }: Props) {
+  const [isChecked, setIsChecked] = useState(item.done);
   return (
     <> 
-      <Container>
-        <input type="checkbox"/>
+      <Container done={isChecked}>
+        <input 
+          type="checkbox" 
+          
+          checked={isChecked}
+          onChange={e => setIsChecked(e.target.checked)}
+        />
         <label className='item'>{item.name}</label>
       </Container>
     </>  
