@@ -17,8 +17,8 @@ export default function NovaTarefa({ item }: Props) {
       <form
         onSubmit={event => {
           event.preventDefault();
-          if (!!nome && description) {
-            setTarefa([...tarefa, nome, description]);
+          if (!!nome) {
+            setTarefa([...tarefa, nome]);
             setNome("");
             setDescription("");
           }
@@ -47,12 +47,6 @@ export default function NovaTarefa({ item }: Props) {
           {tarefa.map((tarefa, index) => (
             <li key={index}>
               <div className="print_tarefa">
-                <input
-                  type="checkbox"
-                  className="input"
-                  checked={isChecked}
-                  onChange={e => setIsChecked(e.target.checked)}
-                />
                 {tarefa}
               </div>
             </li>
