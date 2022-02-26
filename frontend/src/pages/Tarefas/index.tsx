@@ -7,7 +7,6 @@ import { Main } from "../../styles/global";
 import { Item } from '../../types/item';
 import Menu from "../../components/Menu";
 import Tarefa from "../../components/Tarefa";
-import Lista from '../../components/Lista/index';
 
 type Props = {
     taskName: string,
@@ -19,7 +18,6 @@ export default function Tarefas() {
         <>
             <Menu />
             <Main>
-                <Lista />
                 <Tarefa item={{
                     id: 0,
                     name: "",

@@ -9,9 +9,8 @@ export default function Perfil() {
         <>
             <Menu />
             <Main>
-                <h1 className="title">Aba de Perfil</h1>
+                <h1 className="title">Diego Novaes</h1>
                 <div className="textos">
-                    Em desenvolvimento...
                 </div>
             </Main>
         </>
