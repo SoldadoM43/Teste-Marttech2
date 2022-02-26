@@ -24,15 +24,15 @@ export default function Cadastro() {
                     <table>
                         <tr>
                             <td><FaUserAlt /></td>
-                            <td><input type="text" placeholder="Nome" /></td>
+                            <td><input type="text" placeholder="Nome" className="campo"/></td>
                         </tr>
                         <tr>
                             <td><MdAlternateEmail /></td>
-                            <td><input type="email" placeholder="E-mail" /></td>
+                            <td><input type="email" placeholder="E-mail" className="campo"/></td>
                         </tr>
                         <tr>
                             <td><RiLockPasswordFill /></td>
-                            <td><input type="password" placeholder="Senha" /></td>
+                            <td><input type="password" placeholder="Senha" className="campo"/></td>
                         </tr>
                     </table>
                 </div>

@@ -16,7 +16,7 @@ export default function List({ item }: Props) {
       <Container done={isChecked}>
         <input 
           type="checkbox" 
-          
+          className="input"
           checked={isChecked}
           onChange={e => setIsChecked(e.target.checked)}
         />
