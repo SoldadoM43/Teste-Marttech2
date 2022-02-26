@@ -16,7 +16,12 @@ export default function AppRoutes() {
                 <Route path="/senha" element={<Senha />}/>
                 <Route path="/perfil" element={<Perfil />}/>
                 <Route path="/tarefas" element={<Tarefas/>}/>
-                <Route path="/cadastro" element={<Cadastro />}/>
+                <Route path="/cadastro" element={<Cadastro user={{
+                    id: 0,
+                    name: "",
+                    password: "",
+                    email: ""
+                }} />}/>
             </Routes>
         </BrowserRouter>
     );
