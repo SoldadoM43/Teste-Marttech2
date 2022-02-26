@@ -4,6 +4,7 @@ import "./styles.css";
 import { Main, Container } from "../../styles/global";
 
 import Menu from '../../components/Menu/index';
+import { Data } from '../Telas/Cadastro/index';
 
 export default function Home() {
     return (
@@ -37,6 +38,7 @@ export default function Home() {
                             Faça bom proveito ;) <br /> <GrEmoji className="icon"/>
                         </p>
                     </div>
+                    nome: {Data}
                 </Main>
             </Container>
         </>
