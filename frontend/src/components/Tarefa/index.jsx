@@ -1,15 +1,10 @@
 import { useState } from 'react';
 
 import "./styles.css";
-import { Item } from '../../types/item';
 
-type Props = {
-  item: Item
-}
-
-export default function NovaTarefa({ item }: Props) {
+export default function NovaTarefa() {
   const [nome, setNome] = useState<string>("");
-  const [tarefa, setTarefa] = useState<string[]>([]);
+  const [tarefa, setTarefa] = useState<string>([]);
   const [isChecked, setIsChecked] = useState(item.done);
   const [description, setDescription] = useState<string>("");
   return (

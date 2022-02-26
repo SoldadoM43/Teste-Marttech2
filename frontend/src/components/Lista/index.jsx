@@ -1,10 +1,6 @@
 import { useState } from 'react';
 import { List } from "../../types/list";
 
-type Props = {
-    list: List;
-}
-
 export default function List() {
     const [item, setItem] = useState<string>('');
     const [title, setTitle] = useState<string>('');
