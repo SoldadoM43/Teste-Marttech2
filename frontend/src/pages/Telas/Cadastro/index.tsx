@@ -17,7 +17,7 @@ export default function Cadastro({ user }: Props) {
     const [name, setName] = useState<string>('');
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
-    const [user1, setUser1] = useState<string>('');
+    const [usuario, setUsuario] = useState<string[]>([]);
 
     const Save = async (evt: any) => {
         evt.preventDefault();
@@ -48,6 +48,7 @@ export default function Cadastro({ user }: Props) {
                     onSubmit={event => {
                         event.preventDefault();
                         if (!!name) {
+                            setUsuario([...usuario, name])
                             setName('');
                             setEmail('');
                             setPassword('');
@@ -97,7 +98,15 @@ export default function Cadastro({ user }: Props) {
                 </div>
                 <div className="botao">
                     <Link to="/" className="link">
-                        <button type="submit" id="enter" onChange={Save} className="btn">
+                        <button 
+                            type="submit" 
+                            id="enter" 
+                            className="btn"
+                            // onClick={event => {
+                            // Save(event);
+                            // }} ERROR!
+                            onChange={Save}
+                        > 
                             Cadastrar
                         </button>
                     </Link>
