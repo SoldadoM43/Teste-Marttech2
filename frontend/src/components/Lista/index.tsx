@@ -5,16 +5,17 @@ type Props = {
     list: List;
 }
 
-export default function List() {
+export default function Lista() {
     const [item, setItem] = useState<string>('');
     const [title, setTitle] = useState<string>('');
+    const [lista, setLista] = useState<string[]>([]);
     return (
         <>
             <form
                 onSubmit={event => {
                     event.preventDefault();
                     if (!!title) {
-                        setItem([...item, title]);
+                        setLista([...lista, title]); 
                         setTitle("");
                     }
                     return;
@@ -32,7 +33,7 @@ export default function List() {
             </form>
             <div className='exibe_tarefa'>
                 <ul>
-                    {item.map((item, index) => (
+                    {lista.map((item, index) => (
                         <li key={index}>
                             <div className="print_tarefa">
                                 {item}
@@ -44,3 +45,4 @@ export default function List() {
         </>
     );
 }
+export var TarefaLista = Lista();
