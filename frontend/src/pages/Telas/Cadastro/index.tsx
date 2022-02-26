@@ -2,28 +2,22 @@ import { useState } from 'react';
 import { Link } from "react-router-dom";
 import * as Yup from "yup";
 import { FaUserAlt, FaTasks } from "react-icons/fa";
-import { MdAlternateEmail, MdEmail } from "react-icons/md";
+import { MdAlternateEmail } from "react-icons/md";
 import { RiLockPasswordFill } from "react-icons/ri";
 
 import "./styles.css";
 import { Container } from './styles';
 
-type PropsUser = {
-    state: {
-        name: '';
-        email: '';
-        password: '';
-    }
-}
+import { User } from "../../../types/user";
 
-export function TypeUser({ state }: PropsUser) {
-    let data = state;
-    console.log(data);
+type Props = {
+    user: User
 }
-export default function Cadastro() {
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+export default function Cadastro({ user }: Props) {
+    const [name, setName] = useState<string>('');
+    const [email, setEmail] = useState<string>('');
+    const [password, setPassword] = useState<string>('');
+    const [user1, setUser1] = useState<string>('');
 
     const Save = async (evt: any) => {
         evt.preventDefault();
@@ -46,10 +40,21 @@ export default function Cadastro() {
             <br />
             <Container>
                 <header>
-                    <p className="title">Cadastre-se</p>
+                    <h1 className="title">Cadastre-se</h1>
                     <p className="subtitle">Conheça o TSS</p>
                 </header>
                 <FaTasks className="icon" />
+                <form
+                    onSubmit={event => {
+                        event.preventDefault();
+                        if (!!name) {
+                            setName('');
+                            setEmail('');
+                            setPassword('');
+                        }
+                        return;
+                    }}
+                ></form>
                 <div className="inputs">
                     <table>
                         <tr>
@@ -60,7 +65,7 @@ export default function Cadastro() {
                                     className="campo"
                                     placeholder="Nome"
                                     value={name}
-                                    onChange={(evt) => setName(evt.target.value)}
+                                    onChange={event => setName(event.target.value)}
                                 />
                             </td>
                         </tr>
@@ -72,36 +77,32 @@ export default function Cadastro() {
                                     className="campo"
                                     placeholder="E-mail"
                                     value={email}
-                                    onChange={(evt) => setEmail(evt.target.value)}
+                                    onChange={event => setEmail(event.target.value)}
                                 />
                             </td>
                         </tr>
                         <tr>
                             <td><RiLockPasswordFill /></td>
                             <td>
-                                <input 
-                                    type="password" 
-                                    className="campo"  
+                                <input
+                                    type="password"
+                                    className="campo"
                                     placeholder="Senha"
                                     value={password}
-                                    onChange={(evt) => setPassword(evt.target.value)}
+                                    onChange={event => setPassword(event.target.value)}
                                 />
                             </td>
                         </tr>
                     </table>
                 </div>
                 <div className="botao">
-                    {/* <Link to="/" className="link"> */}
-                        <button onChange={Save} className="btn">
+                    <Link to="/" className="link">
+                        <button type="submit" id="enter" onChange={Save} className="btn">
                             Cadastrar
                         </button>
-                    {/* </Link> */}
+                    </Link>
                 </div>
-                console.log({name})
             </Container>
         </>
     );
-}
-export function Data(nome: typeof name,){
-    return nome;
 }

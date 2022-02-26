@@ -4,7 +4,6 @@ import "./styles.css";
 import { Main, Container } from "../../styles/global";
 
 import Menu from '../../components/Menu/index';
-import { Data } from '../Telas/Cadastro/index';
 
 export default function Home() {
     return (
@@ -12,7 +11,7 @@ export default function Home() {
             <Menu />
             <Container>
                 <Main>
-                    <h1 className="title">Bem-Vindo(a)</h1>
+                    <p className="titleHome">Bem-Vindo(a)</p>
                     <div className="textos">
                         <p className="p">
                             Este é o TSS-Task System Storage, que em
@@ -38,7 +37,6 @@ export default function Home() {
                             Faça bom proveito ;) <br /> <GrEmoji className="icon"/>
                         </p>
                     </div>
-                    nome: {Data}
                 </Main>
             </Container>
         </>
