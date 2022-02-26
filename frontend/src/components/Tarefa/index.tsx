@@ -1,18 +1,26 @@
 import { useState } from 'react';
 
 import "./styles.css";
+import { Item } from '../../types/item';
 
-export default function NovaTarefa() {
+type Props = {
+  item: Item
+}
+
+export default function NovaTarefa({ item }: Props) {
   const [nome, setNome] = useState<string>("");
   const [tarefa, setTarefa] = useState<string[]>([]);
+  const [isChecked, setIsChecked] = useState(item.done);
+  const [description, setDescription] = useState<string>("");
   return (
     <>
       <form
         onSubmit={event => {
           event.preventDefault();
-          if (!!nome) {
-            setTarefa([...tarefa, nome]);
+          if (!!nome && description) {
+            setTarefa([...tarefa, nome, description]);
             setNome("");
+            setDescription("");
           }
           return;
         }}
@@ -25,15 +33,32 @@ export default function NovaTarefa() {
           placeholder="Adicione uma Tarefa"
           onChange={event => setNome(event.target.value)}
         />
-        <button type="submit" id="enter" className="add_tarefa">Add Tarefa</button>
+        <input
+          type="text"
+          value={description}
+          className="descricao"
+          placeholder="Adicione uma Descrição"
+          onChange={event => setDescription(event.target.value)}
+        />
+        <button type="submit" id="enter" className="add_tarefa">+</button>
       </form>
-      <ul>
-        {tarefa.map((tarefa, index) => (
-          <li key={index}>
-            <p className="print_tarefa">{tarefa}</p>
-          </li>
-        ))}
-      </ul>
+      <div className='exibe_tarefa'>
+        <ul>
+          {tarefa.map((tarefa, index) => (
+            <li key={index}>
+              <div className="print_tarefa">
+                <input
+                  type="checkbox"
+                  className="input"
+                  checked={isChecked}
+                  onChange={e => setIsChecked(e.target.checked)}
+                />
+                {tarefa}
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
     </>
   );
 };
