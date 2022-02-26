@@ -2,6 +2,8 @@ const app = require('../bin/src/app');
 const http = require('http');
 const debug = require('debug')('nodestr:server');
 
+//  Inativo
+
 function normalizePort(val) {
   const port = parseInt(val, 10);
 
