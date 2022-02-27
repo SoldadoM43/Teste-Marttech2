@@ -3,10 +3,9 @@ import { useState } from 'react';
 import "./styles.css";
 
 export default function NovaTarefa() {
-  const [nome, setNome] = useState<string>("");
-  const [tarefa, setTarefa] = useState<string>([]);
-  const [isChecked, setIsChecked] = useState(item.done);
-  const [description, setDescription] = useState<string>("");
+  const [nome, setNome] = useState("");
+  const [tarefa, setTarefa] = useState([]);
+  const [description, setDescription] = useState("");
   return (
     <>
       <form
