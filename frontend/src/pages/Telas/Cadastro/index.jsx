@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { Link } from "react-router-dom";
+
 import { FaUserAlt, FaTasks } from "react-icons/fa";
 import { MdAlternateEmail } from "react-icons/md";
 import { RiLockPasswordFill } from "react-icons/ri";
 
 import "./styles.css";
 import { Container } from './styles';
-
 
 export default function Cadastro() {
     const [name, setName] = useState('');
@@ -78,7 +78,12 @@ export default function Cadastro() {
                 </div>
                 <div className="botao">
                     <Link to="/" className="link">
-                        <button type="submit" id="enter" className="btn">
+                        <button 
+                            id="enter" 
+                            type="submit" 
+                            className="btn"
+                            // onChange={(e)=>setUser({name: e.target.value})}
+                        >
                             Cadastrar
                         </button>
                     </Link>

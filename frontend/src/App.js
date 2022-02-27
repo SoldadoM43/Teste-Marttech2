@@ -1,12 +1,12 @@
 import React from 'react';
 
 import './App.css';
-import { AuthContext } from './providers/auth';
 
 import AppRoutes from "./routes";
+import { useAuth } from './providers/auth';
 
 function App() {
-  const {user} = React.useContext(AuthContext);
+  const {user} = useAuth;
   return (
     <div className="App">
       <AppRoutes />
