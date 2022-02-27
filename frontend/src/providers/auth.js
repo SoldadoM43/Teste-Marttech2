@@ -3,6 +3,10 @@ import React, { useEffect, useState } from "react";
 export const AuthContext = React.createContext({});
 
 export const AuthProvider = (props) => {
+    const [newTarefa, setNewTarefa] = useState({
+        nome: '',
+        description: '',
+    })
     const [user, setUser] = useState({
         nome: 'Diego',
     });
@@ -19,7 +23,7 @@ export const AuthProvider = (props) => {
     }, []);
 
     return(
-        <AuthContext.Provider value={{user, setUser}}>
+        <AuthContext.Provider value={{user, setUser, newTarefa, setNewTarefa}}>
             {props.children}
         </AuthContext.Provider>
     );

@@ -1,8 +1,10 @@
 import { useState } from 'react';
+import { useAuth } from '../../providers/auth';
 
 import "./styles.css";
 
 export default function NovaTarefa() {
+  const {setNewTarefa} = useAuth();
   const [nome, setNome] = useState("");
   const [tarefa, setTarefa] = useState([]);
   const [description, setDescription] = useState("");
@@ -25,16 +27,22 @@ export default function NovaTarefa() {
           id="tarefaInput"
           className="tarefa"
           placeholder="Adicione uma Tarefa"
-          onChange={event => setNome(event.target.value)}
+          onChange={(e)=>setNewTarefa({name: e.target.value})}
         />
         <input
           type="text"
           value={description}
           className="descricao"
           placeholder="Adicione uma Descrição"
-          onChange={event => setDescription(event.target.value)}
+          onChange={(e)=>setNewTarefa({description: e.target.value})}
         />
-        <button type="submit" id="enter" className="add_tarefa">+</button>
+        <button 
+          id="enter" 
+          type="submit" 
+          className="add_tarefa"
+        >
+          +
+        </button>
       </form>
       <div className='exibe_tarefa'>
         <ul>

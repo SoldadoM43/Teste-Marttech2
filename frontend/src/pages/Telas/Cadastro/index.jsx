@@ -7,11 +7,19 @@ import { RiLockPasswordFill } from "react-icons/ri";
 
 import "./styles.css";
 import { Container } from './styles';
+import { useAuth } from '../../../providers/auth';
 
 export default function Cadastro() {
+    const {setUser} = useAuth();
+    const [input, setInput] = useState('');
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
+    const handleSave = () => {
+        localStorage.setItem('user', JSON.stringify(input));
+        setUser(input);
+    }
     return (
         <>
             <br />
@@ -46,7 +54,7 @@ export default function Cadastro() {
                                     className="campo"
                                     placeholder="Nome"
                                     value={name}
-                                    onChange={event => setName(event.target.value)}
+                                    onChange={(e)=>setInput({name: e.target.value})}
                                 />
                             </td>
                         </tr>
@@ -58,7 +66,7 @@ export default function Cadastro() {
                                     className="campo"
                                     placeholder="E-mail"
                                     value={email}
-                                    onChange={event => setEmail(event.target.value)}
+                                    onChange={(e)=>setInput({email: e.target.value})}
                                 />
                             </td>
                         </tr>
@@ -70,7 +78,7 @@ export default function Cadastro() {
                                     className="campo"
                                     placeholder="Senha"
                                     value={password}
-                                    onChange={event => setPassword(event.target.value)}
+                                    onChange={(e)=>setInput({password: e.target.value})}
                                 />
                             </td>
                         </tr>
@@ -82,7 +90,6 @@ export default function Cadastro() {
                             id="enter" 
                             type="submit" 
                             className="btn"
-                            // onChange={(e)=>setUser({name: e.target.value})}
                         >
                             Cadastrar
                         </button>
