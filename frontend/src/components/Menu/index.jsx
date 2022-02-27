@@ -29,11 +29,6 @@ export default function Menu() {
                         </Link>
                     </li>
                     <li>
-                        <Link to="/perfil" className="a">
-                            Perfil
-                        </Link>
-                    </li>
-                    <li>
                         <Link to="/" className="a">
                             <HiOutlineLogout onChange={handleLogout}/>
                         </Link>

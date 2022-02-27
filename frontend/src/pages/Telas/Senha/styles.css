@@ -1,0 +1,16 @@
+.texto {
+    text-align: center;
+    color: rgb(143, 163, 180);
+}
+.div_icon {
+    text-align: center;
+}
+.div_icon .icon {
+    font-size: 60px;
+    color: rgb(143, 163, 180);
+}
+.link {
+    text-align: center;
+    text-decoration: none;
+    color: rgb(143, 163, 180);
+}

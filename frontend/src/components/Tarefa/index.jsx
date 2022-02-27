@@ -18,6 +18,7 @@ export default function NovaTarefa() {
             setNome("");
             setDescription("");
           }
+          // PORQUE NÃO ESTÁ DIGINANDO NOS INPUTS??????????
           return;
         }}
       >

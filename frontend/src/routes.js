@@ -1,6 +1,5 @@
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 
-import Perfil from "./pages/Perfil/index";
 import Home from "./pages/Home/index";
 import Tarefas from "./pages/Tarefas/index";
 import Login from "./pages/Telas/Login/index";
@@ -14,7 +13,6 @@ export default function AppRoutes() {
                 <Route path="/" element={<Login />}/>
                 <Route path="/home" element={<Home />}/>
                 <Route path="/senha" element={<Senha />}/>
-                <Route path="/perfil" element={<Perfil />}/>
                 <Route path="/tarefas" element={<Tarefas/>}/>
                 <Route path="/cadastro" element={<Cadastro />}/>
             </Routes>
