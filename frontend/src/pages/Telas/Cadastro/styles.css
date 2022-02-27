@@ -1,0 +1,55 @@
+.titleCadastro {
+    margin: 10px;
+    font-size: 30px;
+    font-weight: bold;
+    color:black;
+}
+.subtitle {
+    margin: 10px;
+    font-size: 25px;
+    font-weight: bold;
+}
+.icon {
+    margin-top: 20px;
+    font-size: 100px;
+    padding-right: 10px;
+}
+.inputs {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+}
+.inputs table {
+    margin: 0 auto;
+    padding-right: 20px;
+}
+.inputs .campo {
+    margin: 5px;
+    height: 20px;
+    padding-left: 5px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+.link {
+    text-decoration: none;
+    color: rgb(40, 111, 158);
+}
+.botao {
+    margin-top: 30px;
+}
+.botao .btn {
+    width: 100px;
+    height: 35px;
+    cursor: pointer;
+    border-radius: 10px;
+    transform-style: unset;
+    background-color: #29297c;
+    border: solid 1px #424294;
+    color: rgb(230, 238, 245);
+}
+.botao .btn:hover {
+    transform-style: unset;
+    background-color: #282844;
+    border: solid 1px #353553;
+    color: rgb(224, 233, 241);
+}
