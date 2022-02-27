@@ -4,7 +4,18 @@ import {HiOutlineLogout} from "react-icons/hi";
 import "./styles.css";
 import { Header } from "./styles";
 
+import {useAuth} from "../../providers/auth";
+
 export default function Menu() {
+    const {setUser} = useAuth();
+
+    const handleLogout = () => {
+        localStorage.removeItem("user");
+        setUser({
+            name: '',
+        });
+    };
+
     return (
         <Header className="header">
             <Link to="/home" className="a_nome">
@@ -24,7 +35,7 @@ export default function Menu() {
                     </li>
                     <li>
                         <Link to="/" className="a">
-                            <HiOutlineLogout />
+                            <HiOutlineLogout onChange={handleLogout}/>
                         </Link>
                     </li>
                 </ul>
