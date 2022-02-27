@@ -6,6 +6,6 @@
 
 #### . Digite "yarn" no terminal para instalar as dependências
 
-#### . Digite: "yarn dev"
+#### . Digite: "yarn start"
 
 #### . Abra o Browser e coloque na url: localhost:3000
